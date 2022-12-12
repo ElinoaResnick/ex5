@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import Check from './check';
+import {useState} from "react";
+
 
 function App() {
+  const [passLen, setPassLen] = useState()
+
+  function handlePass(e){
+    console.log("e "+Number(e.target.value))
+    setPassLen(e.target.value)
+    console.log("t" +passLen)
+
+  }
+
+  function checkLength()
+  {
+    let y = passLen.length
+    console.log(y)
+  }
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>Password</p>
+      <input value = {passLen} id="pwd" onChange ={handlePass}></input>
+      <button disabled = {false} onClick = {checkLength}>submit</button>
+      <p>{passLen}</p>
     </div>
+    
+    
   );
 }
 

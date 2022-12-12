@@ -17,7 +17,7 @@ function Check(props) {
       setStatus("Medium Password")
       disChange(false)
     }
-    else if(passLen.length > 7){
+    else if(passLen.length > 6){
       setStatus("Strong Password")
       disChange(false)
     }

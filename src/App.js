@@ -4,15 +4,21 @@ import {useState} from "react";
 
 
 function App() {
-  const [passLen, setPassLen] = useState()
+  const [passLen, setPassLen] = useState("")
+  const [btnDis, setBtnDis] = useState()
 
   function handlePass(e){
-    console.log("e "+Number(e.target.value))
+    // console.log("e "+Number(e.target.value))
     setPassLen(e.target.value)
-    console.log("t" +passLen)
+    // console.log("t" +passLen)
 
   }
 
+  function disChange(tof){
+    // console.log(tof)
+    setBtnDis(tof)
+
+  }
   function checkLength()
   {
     let y = passLen.length
@@ -23,8 +29,9 @@ function App() {
     <div className="App">
       <p>Password</p>
       <input value = {passLen} id="pwd" onChange ={handlePass}></input>
-      <button disabled = {false} onClick = {checkLength}>submit</button>
-      <p>{passLen}</p>
+      <button disabled = {btnDis} onClick = {checkLength} >submit</button><br/><br/>
+      {/* <p>{passLen}</p> */}
+      <Check passLen={passLen} disChange={disChange}/>
     </div>
     
     

@@ -5,7 +5,7 @@ import {useState} from "react";
 
 function App() {
   const [passLen, setPassLen] = useState("")
-  const [btnDis, setBtnDis] = useState()
+  const [btnDis, setBtnDis] = useState(true)
 
   function handlePass(e){
     // console.log("e "+Number(e.target.value))
